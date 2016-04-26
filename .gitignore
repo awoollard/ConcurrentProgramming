@@ -243,3 +243,5 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/4.1 - DiningPhilosophers/Deadlock.png
+/1.2 - HelloActiveObjectWorld/MessageWriter.png
