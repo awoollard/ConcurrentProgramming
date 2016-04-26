@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F57B1628-607C-4823-B64A-BEBC747048D4}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{AFC1D751-DBE9-4910-904F-2A4A0D63A0A0}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AWoollard.Concurrent.Utils</RootNamespace>
-    <AssemblyName>AWoollard.Concurrent.Utils</AssemblyName>
+    <RootNamespace>_6._1___Barrier</RootNamespace>
+    <AssemblyName>6.1 - Barrier</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,19 +35,26 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActiveObject.cs" />
-    <Compile Include="Barrier.cs" />
-    <Compile Include="BoundChannel.cs" />
-    <Compile Include="Channel.cs" />
-    <Compile Include="ChannelActiveObject .cs" />
-    <Compile Include="Latch.cs" />
-    <Compile Include="MessageWriterActiveObject.cs" />
+    <Compile Include="BarrierTest.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rendezvous.cs" />
-    <Compile Include="Mutex.cs" />
-    <Compile Include="Semaphore.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AWoollard.Concurrent.Utils\AWoollard.Concurrent.Utils.csproj">
+      <Project>{f57b1628-607c-4823-b64a-bebc747048d4}</Project>
+      <Name>AWoollard.Concurrent.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
