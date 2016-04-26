@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.1 - DiningPhilosophers", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWoollard.Concurrent.Utils", "AWoollard.Concurrent.Utils\AWoollard.Concurrent.Utils.csproj", "{F57B1628-607C-4823-B64A-BEBC747048D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8.1 - Connection Manager", "8.1 - Connection Manager\8.1 - Connection Manager.csproj", "{6D9B2CDF-EAC7-4A13-A9DA-FE2AFD0AAAA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.2 - Gamer Problem", "4.2 - Gamer Problem\4.2 - Gamer Problem.csproj", "{AE9B5270-C218-49CD-9274-EBE3232716BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +85,14 @@ Global
 		{F57B1628-607C-4823-B64A-BEBC747048D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F57B1628-607C-4823-B64A-BEBC747048D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F57B1628-607C-4823-B64A-BEBC747048D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D9B2CDF-EAC7-4A13-A9DA-FE2AFD0AAAA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D9B2CDF-EAC7-4A13-A9DA-FE2AFD0AAAA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D9B2CDF-EAC7-4A13-A9DA-FE2AFD0AAAA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D9B2CDF-EAC7-4A13-A9DA-FE2AFD0AAAA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE9B5270-C218-49CD-9274-EBE3232716BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE9B5270-C218-49CD-9274-EBE3232716BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE9B5270-C218-49CD-9274-EBE3232716BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE9B5270-C218-49CD-9274-EBE3232716BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
