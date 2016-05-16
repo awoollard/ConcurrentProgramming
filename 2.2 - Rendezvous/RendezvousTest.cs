@@ -11,16 +11,8 @@ namespace _2._2___Rendezvous
     {
         private Thread _aThread;
         private Thread _bThread;
-        private readonly Rendezvous _rendezvous;
+        private Rendezvous _rendezvous;
 
-        /// <summary>
-        /// Initialises the Threads and Rendezvous used for the tests.
-        /// </summary>
-        public RendezvousTest()
-        {
-            _rendezvous = new Rendezvous();
-        }
-        
         private void DoSomething()
         {
             _rendezvous.Arrive(Thread.CurrentThread);
@@ -35,6 +27,10 @@ namespace _2._2___Rendezvous
             {
                 Console.WriteLine("All Rendezvous tests passed");
             }
+            else
+            {
+                Console.WriteLine("One or more Rendezvous tests failed");
+            }
         }
 
         /// <summary>
@@ -42,10 +38,9 @@ namespace _2._2___Rendezvous
         /// </summary>
         private bool Test1(int timeoutSeconds = 3)
         {
+            _rendezvous = new Rendezvous();
             _aThread = new Thread(DoSomething);
             _bThread = new Thread(DoSomething);
-            _aThread.Name = "1";
-            _bThread.Name = "2";
 
             var timeout = TimeSpan.FromSeconds(timeoutSeconds);
             var timeStarted = DateTime.UtcNow;
@@ -66,10 +61,9 @@ namespace _2._2___Rendezvous
         /// </summary>
         private bool Test2(int timeoutSeconds = 3)
         {
+            _rendezvous = new Rendezvous();
             _aThread = new Thread(DoSomething);
             _bThread = new Thread(DoSomething);
-            _aThread.Name = "1";
-            _bThread.Name = "2";
 
             var timeout = TimeSpan.FromSeconds(timeoutSeconds);
             var timeStarted = DateTime.UtcNow;
