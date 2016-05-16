@@ -85,8 +85,6 @@ namespace _2._3___Channel
         {
             _aThread = new Thread(() => PutRandomNumbersIntoAChannel(10));
             _bThread = new Thread(() => TakeNumbersFromChannel(10));
-            _aThread.Name = "Thread one";
-            _bThread.Name = "Thread two";
 
             _aThread.Start();
             _bThread.Start();
@@ -105,8 +103,6 @@ namespace _2._3___Channel
         {
             _aThread = new Thread(() => { });
             _bThread = new Thread(() => TakeNumbersFromChannel(1));
-            _aThread.Name = "Thread one";
-            _bThread.Name = "Thread two";
 
             var timeout = TimeSpan.FromSeconds(3);
             var timeStarted = DateTime.UtcNow;

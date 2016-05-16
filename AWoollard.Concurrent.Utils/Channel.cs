@@ -3,7 +3,9 @@
 namespace AWoollard.Concurrent.Utils
 {
     /// <summary>
-    /// A channel which can be used for interthread communication
+    /// A channel which can be used for interthread communication. Threads can <see cref="Put"/> items
+    /// into the channel, and other threads can <see cref="Take"/> the items from the channel in the order they
+    /// were placed (FIFO). This allows threads to pass data between each other.
     /// </summary>
     /// <typeparam name="T">The type of items stored in the channel</typeparam>
     public class Channel<T>
@@ -12,7 +14,7 @@ namespace AWoollard.Concurrent.Utils
         private readonly Semaphore _semaphore;
 
         /// <summary>
-        /// Initialises the Channel
+        /// Initialises the Channel with no items.
         /// </summary>
         public Channel()
         {
@@ -21,23 +23,29 @@ namespace AWoollard.Concurrent.Utils
         }
 
         /// <summary>
-        /// Puts an item into the channel
+        /// Puts an item into the channel.
         /// </summary>
         /// <param name="item">The item to go into the channel</param>
         public virtual void Put(T item)
         {
-            _queue.Enqueue(item);
-            _semaphore.Release();
+            lock (this)
+            {
+                _queue.Enqueue(item);
+                _semaphore.Release();
+            }
         }
 
         /// <summary>
         /// Takes an item from the channel
         /// </summary>
-        /// <returns>The item</returns>
+        /// <returns>The item taken from the channel</returns>
         public virtual T Take()
         {
-            _semaphore.Acquire();
-            return _queue.Dequeue();
+            lock (this)
+            {
+                _semaphore.Acquire();
+                return _queue.Dequeue();
+            }
         }
     }
 }
